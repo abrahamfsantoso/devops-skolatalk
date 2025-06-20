@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Demo - Portfolio Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .version-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .demo-info {
+            background: #e8f4fd;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 DevOps Demo Website</h1>
+            <p>Automated Deployment with AWS CodePipeline</p>
+            <div class="version-badge">
+                <strong>Version: 1.0.0</strong> | Last Updated: <span id="timestamp"></span>
+            </div>
+        </header>
+
+        <main class="content">
+            <h2>Welcome to Our CI/CD Demo!</h2>
+            <p>This website demonstrates the power of DevOps automation. Every time we push code to GitHub, this site updates automatically through our CI/CD pipeline.</p>
+            
+            <div class="demo-info">
+                <h3>🔄 Demo Workflow:</h3>
+                <ol>
+                    <li><strong>Code Change</strong> - Developer updates HTML/CSS</li>
+                    <li><strong>Git Push</strong> - Changes pushed to GitHub repository</li>
+                    <li><strong>Pipeline Trigger</strong> - AWS CodePipeline automatically detects changes</li>
+                    <li><strong>Deploy to S3</strong> - Files uploaded to S3 bucket</li>
+                    <li><strong>CDN Update</strong> - CloudFront distributes globally</li>
+                    <li><strong>Live Website</strong> - You see the changes instantly!</li>
+                </ol>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>⚡ Fast Deployment</h3>
+                    <p>From code commit to live website in under 3 minutes</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌍 Global CDN</h3>
+                    <p>CloudFront ensures fast loading worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Secure & Scalable</h3>
+                    <p>S3 hosting with enterprise-grade security</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Cost Effective</h3>
+                    <p>Pay only for what you use, no servers to manage</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <h3>🎯 Live Demo Status</h3>
+                <p><strong>Pipeline Status:</strong> <span style="color: green;">✅ Active</span></p>
+                <p><strong>Deployment:</strong> <span style="color: blue;">Ready for changes</span></p>
+                <p><strong>Next Update:</strong> Watch for real-time changes during demo!</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Built with ❤️ for DigitalSkola DevOps Demo</p>
+            <p>Powered by AWS CodePipeline, S3, and CloudFront</p>
+        </footer>
+    </div>
+
+    <script>
+        // Display current timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+        
+        // Add some interactivity for demo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 DevOps Demo Website Loaded Successfully!');
+            console.log('Pipeline Status: Ready for deployment');
+            
+            // Simulate real-time updates (for demo effect)
+            setTimeout(() => {
+                console.log('✅ All systems operational');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
